@@ -30,7 +30,7 @@ RL是一个马尔可夫决策过程（MDP）如果Agent只能观测到当前状�
 
 部分可观测马尔可夫决策过程可以用一个**七元组**描述： \(S, A, T, R, Ω, O, γ\) 。其中 \(S\) 表示状态空间，为隐变量，\(A\) 为动作空间，
 
-\(T(s′|s, a)\) 为状态转移概率，\(R\) 为奖励函数，$$Ω(o|s, a)$$为观测概率，\(O\) 为观测空间，\(γ\)为折扣因子。
+\(T(s′|s, a)\) 为状态转移概率，\(R\) 为奖励函数，\(Ω(o|s, a)\)为观测概率，\(O\) 为观测空间，\(γ\)为折扣因子。
 
 # 动作空间
 下象棋这种是**离散动作空间**，动作一步一步执行，动作数量有限。机器人的行为一般是**连续动作空间**，动作数量无限。
@@ -38,7 +38,9 @@ RL是一个马尔可夫决策过程（MDP）如果Agent只能观测到当前状�
 ## 策略
 **策略（policy）**：Agent 会根据policy来选择下一个action。
 策略分为随机性策略和确定性策略：
-1. 随机性策略：$$\pi(a|s) = p(a_t = a|s_t = s)$$,即输入一个状态s，输出一个概率分布，对这个概率分布采样可以得到Agent 将会采取的Action
+1. 随机性策略：
+$\pi(a|s) = p(a_t = a|s_t = s)$
+,即输入一个状态s，输出一个概率分布，对这个概率分布采样可以得到Agent 将会采取的Action
 2. 确定性策略：Agent直接选取概率最大的action
 
 一般用随机性策略，可以更好的探索环境，使动作具有多样性
@@ -46,14 +48,10 @@ RL是一个马尔可夫决策过程（MDP）如果Agent只能观测到当前状�
 **价值函数**：用于评估Agent 进入某步state 可以对后面的reward 带来多大的影响。
 价值函数的值是对未来奖励的预测，用它来评估状态的好坏。定义一个折扣因子，使距离当前时间步越远的奖励对下一步的action决策影响越小。
 价值函数可以定义为：
-
-\(V_\pi(s) \doteq \mathbb{E}_\pi[G_t \mid s_t = s] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s \right], \text{对于所有的 } s \in S\)
-
+$V_\pi(s) \doteq \mathbb{E}_\pi[G_t \mid s_t = s] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s \right], \text{对于所有的 } s \in S$
 
 另外一种价值函数：Q函数：包含了两个变量action和state，其定义为：
-$$ 
-\(Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s,a_t = a \right], \text{对于所有的 } s \in S\)
-$$
+$$Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s,a_t = a \right], \text{对于所有的 } s \in S$$
 
 其意义为：未来可以获得reward 的期望取决于当前的state 与action
 
