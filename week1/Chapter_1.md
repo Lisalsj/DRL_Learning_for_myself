@@ -58,10 +58,7 @@ $$Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi
 ## 模型
 **模型**：表示Agent 对环境的state 的理解，下一步的state 取决于当前的state 以及当前 采取的action
 一般由状态转移概率和奖励函数两个部分组成
-1. 状态转移函数：
-$$
-p_{ss'}^a = p(s_{t+1} = s' \mid s_t = s, a_t = a)
-$$
+1. 状态转移函数： $p_{ss'}^a = p(s_{t+1} = s' \mid s_t = s, a_t = a)$
 2. 奖励函数：\(R(s, a) = \mathbb{E}[r_{t+1} \mid s_t = s, a_t = a]\)
 
 有了策略、价值函数和模型三个组成部分之后，就形成了一个马尔可夫决策过程（MDP）
