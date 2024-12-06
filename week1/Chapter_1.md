@@ -1,6 +1,6 @@
 # RL
 
-## RL
+## RL是？
 
 Agent 通过observe environment，根据现在的state 进行decision，然后选择了一个action 从而获得到 reward的过程
 ![RL示意图](../image/img.png "RL示意图")
