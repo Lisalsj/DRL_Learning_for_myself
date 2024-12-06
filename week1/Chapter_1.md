@@ -65,10 +65,10 @@ RL是一个马尔可夫决策过程（MDP）如果Agent只能观测到当前状�
 价值函数的值是对未来奖励的预测，用它来评估状态的好坏。定义一个折扣因子，使距离当前时间步越远的奖励对下一步的action决策影响越小。
 价值函数可以定义为：
 
-$ V_\pi(s) \doteq \mathbb{E}_\pi \left[ G_t \mid s_t = s \right] = \mathbb{E}_\pi \left[ \sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s \right], \quad \forall s \in S $
+$$V_\pi(s) \doteq \mathbb{E}_\pi \left[ G_t \mid s_t = s \right] = \mathbb{E}_\pi \left[ \sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s \right], \quad \forall s \in S$$
 
 另外一种价值函数：Q函数：包含了两个变量action和state，其定义为：
-$Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s,a_t = a \right], \text{对于所有的 } s \in S$
+$$Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s,a_t = a \right], \text{对于所有的 } s \in S$$
 
 其意义为：未来可以获得reward 的期望取决于当前的state 与action
 
@@ -112,8 +112,15 @@ $Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\
 
 # 探索与利用
 
-RL中 **探索（exploration）** 和 **利用（exploitation）** 是核心
+RL中 **探索（exploration）** 和 **利用（exploitation）** 是核心。
 
-exploration 市区探索环境，通过尝试不同的action 来获得最佳的策略
+exploration：Agent 探索环境，通过尝试不同的action 来获得最佳的策略。
 
-exploitation
+exploitation：Agent 不去尝试新的动作,采取已知的可以带来很大奖励的动作去执行。
+
+单步RL任务对应于多臂老虎机（MAB），如果只是为了得到每个杆（arm）的期望奖励，那就是用**仅探索法**，平均分配尝试的机会，最终将每个arm的奖励进行近似估计。
+如果只是为了执行奖励最大的方法，使用仅利用法，按下目前最优的arm（即到目前为止平均奖励最大）。
+
+探索是为了估计arm的优劣，利用是为了选择当前的最优解，两者是矛盾的即**探索-利用窘境**
+
+实验部分在jupyter notebook中
