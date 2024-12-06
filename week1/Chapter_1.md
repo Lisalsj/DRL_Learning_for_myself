@@ -28,7 +28,7 @@ state 是完整的世界信息，observation是对state的部分描述
 
 RL是一个马尔可夫决策过程（MDP）如果Agent只能观测到当前状态或者说是上一帧的信息，那么称之为部分可观测马尔可夫决策过程（POMDP）
 
-部分可观测马尔可夫决策过程可以用一个**七元组**描述：$$(S, A, T, R, Ω, O, γ)$$。其中 \(S\) 表示状态空间，为隐变量，\(A\) 为动作空间，
+部分可观测马尔可夫决策过程可以用一个**七元组**描述：$(S, A, T, R, Ω, O, γ)$。其中 \(S\) 表示状态空间，为隐变量，\(A\) 为动作空间，
 $$T(s′|s, a)$$ 为状态转移概率，\(R\) 为奖励函数，$$Ω(o|s, a)$$ 为观测概率，\(O\) 为观测空间，\(\gamma\) 为折扣因子。
 
 # 动作空间
@@ -37,7 +37,7 @@ $$T(s′|s, a)$$ 为状态转移概率，\(R\) 为奖励函数，$$Ω(o|s, a)$$
 ## 策略
 **策略（policy）**：Agent 会根据policy来选择下一个action。
 策略分为随机性策略和确定性策略：
-1. 随机性策略：$$\(\pi(a|s) = p(a_t = a|s_t = s)\)$$,即输入一个状态s，输出一个概率分布，对这个概率分布采样可以得到Agent 将会采取的Action
+1. 随机性策略：\(\pi(a|s) = p(a_t = a|s_t = s)\),即输入一个状态s，输出一个概率分布，对这个概率分布采样可以得到Agent 将会采取的Action
 2. 确定性策略：Agent直接选取概率最大的action
 
 一般用随机性策略，可以更好的探索环境，使动作具有多样性
@@ -45,22 +45,22 @@ $$T(s′|s, a)$$ 为状态转移概率，\(R\) 为奖励函数，$$Ω(o|s, a)$$
 **价值函数**：用于评估Agent 进入某步state 可以对后面的reward 带来多大的影响。
 价值函数的值是对未来奖励的预测，用它来评估状态的好坏。定义一个折扣因子，使距离当前时间步越远的奖励对下一步的action决策影响越小。
 价值函数可以定义为：
-$$
+
 \(V_\pi(s) \doteq \mathbb{E}_\pi[G_t \mid s_t = s] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s \right], \text{对于所有的 } s \in S\)
-$$
+
 
 另外一种价值函数：Q函数：包含了两个变量action和state，其定义为：
-$$
+
 \(Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s,a_t = a \right], \text{对于所有的 } s \in S\)
-$$
+
 
 其意义为：未来可以获得reward 的期望取决于当前的state 与action
 
 ## 模型
 **模型**：表示Agent 对环境的state 的理解，下一步的state 取决于当前的state 以及当前 采取的action
 一般由状态转移概率和奖励函数两个部分组成
-1. 状态转移函数：$$\(p_{ss'}^a = p(s_{t+1} = s' \mid s_t = s, a_t = a)\)$$
-2. 奖励函数：$$\(R(s, a) = \mathbb{E}[r_{t+1} \mid s_t = s, a_t = a]\)$$
+1. 状态转移函数：\(p_{ss'}^a = p(s_{t+1} = s' \mid s_t = s, a_t = a)\)
+2. 奖励函数：\(R(s, a) = \mathbb{E}[r_{t+1} \mid s_t = s, a_t = a]\)
 
 有了策略、价值函数和模型三个组成部分之后，就形成了一个马尔可夫决策过程（MDP）
 
@@ -82,7 +82,7 @@ Agent会选择下一个可以使状态的价值上升的action 进行执行。
 实际应用中Agent并不能完全知道MDP中的所有元素，此时就需要利用免模型的强化学习，通过利用reward与状态迁移给予的反馈信息来更新动作策略，这样反复迭代，直到学习到最优策略。
 
 # 探索与利用
-RL中**探索（exploration）**和**利用（exploitation）**是核心
+RL中**探索（exploration）** 和 **利用（exploitation）**是核心
 
 exploration 市区探索环境，通过尝试不同的action 来获得最佳的策略
 
