@@ -47,14 +47,10 @@ $\pi(a|s) = p(a_t = a|s_t = s)$
 ## 价值函数
 **价值函数**：用于评估Agent 进入某步state 可以对后面的reward 带来多大的影响。
 价值函数的值是对未来奖励的预测，用它来评估状态的好坏。定义一个折扣因子，使距离当前时间步越远的奖励对下一步的action决策影响越小。
-价值函数可以定义为：
-
-$$
-V_\pi(s) \doteq \mathbb{E}_\pi \left[ G_t \mid s_t = s \right] = \mathbb{E}_\pi \left[ \sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s \right], \quad \forall s \in S
-$$
+价值函数可以定义为：$V_\pi(s) \doteq \mathbb{E}_\pi \left[ G_t \mid s_t = s \right] = \mathbb{E}_\pi \left[ \sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s \right], \quad \forall s \in S$
 
 另外一种价值函数：Q函数：包含了两个变量action和state，其定义为：
-$$Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s,a_t = a \right], \text{对于所有的 } s \in S$$
+$$Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi\left[\sum_{k=0}^\infty \gamma^k r_{t+k+1} \mid s_t = s,a_t = a \right], \text{对于所有的 } s \in S$
 
 其意义为：未来可以获得reward 的期望取决于当前的state 与action
 
