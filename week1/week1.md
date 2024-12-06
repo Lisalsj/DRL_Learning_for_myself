@@ -17,4 +17,4 @@ DRL = RL + DL
 
 # 序列决策
 历史是一个包含观测、动作、奖励的序列
-&& H_t = o_1, a_1, r_1, \ldots, o_t, a_t, r_t &&
+$$H_t = o_1, a_1, r_1, \ldots, o_t, a_t, r_t$$
