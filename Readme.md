@@ -9,6 +9,12 @@
 
 前期主要是学习周报（看的书的笔记，就是那本蘑菇书），和部分小实验的代码
 
+# 注
+所有文件都是Markdown的，好像因为不支持Latex格式的公式，所以部分公式出不来，下载下来去Pycharm的编辑器上应该可以看完整。
+
+eg：
+![img.png](image/egeg1.png)
+![img.png](image/egeg11.png)
 # 参考
     王琦，杨毅远，江季，Easy RL：强化学习教程，人民邮电出版社，https://github.com/datawhalechina/easy-rl, 2022.
     Qi Wang, Yiyuan Yang, Ji Jiang，Easy RL: Reinforcement Learning Tutorial，Posts & Telecom Press，https://github.com/datawhalechina/easy-rl, 2022.
