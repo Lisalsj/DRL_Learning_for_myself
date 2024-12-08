@@ -13,7 +13,13 @@
 所有文件都是Markdown的，好像因为不支持Latex格式的公式，所以部分公式出不来，下载下来去Pycharm的编辑器上应该可以看完整。
 
 eg：
+
+github上的
+
 ![img.png](image/egeg1.png)
+
+pycharm的Markdown编辑器上的
+
 ![img.png](image/egeg11.png)
 # 参考
     王琦，杨毅远，江季，Easy RL：强化学习教程，人民邮电出版社，https://github.com/datawhalechina/easy-rl, 2022.
