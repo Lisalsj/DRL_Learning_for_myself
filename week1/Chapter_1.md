@@ -3,7 +3,7 @@
 ## RL是？
 
 Agent 通过observe environment，根据现在的state 进行decision，然后选择了一个action 从而获得到 reward的过程
-![RL示意图](../image/img.png "RL示意图")
+![RL示意图](../weak1_image/img.png "RL示意图")
 
 ## RL的小知识点
 
@@ -105,7 +105,7 @@ $$Q_\pi(s，a) \doteq \mathbb{E}_\pi[G_t \mid s_t = s, a_t = a] = \mathbb{E}_\pi
 ### 根据有无学习环境模型进行划分
 
 1. 有模型（model-based）：Agent 通过学习状态的转移来采取动作（比免模型的RL多了一个对真实环境进行建模的过程）
-   ![有模型强化学习的过程](../image/model_based_RL.png "有模型强化学习的过程")
+   ![有模型强化学习的过程](../weak1_image/model_based_RL.png "有模型强化学习的过程")
 2. 免模型（model-free）：Agent没有去直接估计状态的转移，也没有得到环境的具体转移变量，通过学习价值函数和策略函数进行决策。
 
 实际应用中Agent并不能完全知道MDP中的所有元素，此时就需要利用免模型的强化学习，通过利用reward与状态迁移给予的反馈信息来更新动作策略，这样反复迭代，直到学习到最优策略。

@@ -49,13 +49,13 @@ eg:动态规划，蒙特卡洛，时序差分学习（前两者的结合）
 
 1. 蒙特卡洛方法
 
-![img.png](../image/mtkl.png)
+![img.png](../weak1_image/mtkl.png)
 
 比如说从某一个状态开始，执行了1000次实验，得到1000个轨迹，与这1000个轨迹的汇报。求平均值等价于现在这个状态的价值。这个价值即定义了未来可能获得多少的奖励
 
 2. 动态规划方法
 
-![img.png](../image/dtgh.png)
+![img.png](../weak1_image/dtgh.png)
 
 不断利用迭代贝尔曼方程将状态价值函数进行更新，直到价值函数收敛，最新的状态价值，即可作为当前状态的价值。
 
@@ -95,7 +95,7 @@ $$
 
 MDP与MRP/MP的区别在于，MDP会在当前状态的时候优先根据策略决策动作，根据当前动作生成下一个时间段的状态分布概率。即在状态转移过程中，两个状态之间由某一个动作进行衔接。
 
-![img.png](../image/MDP_and_MRPorMP.png)
+![img.png](../weak1_image/MDP_and_MRPorMP.png)
 
 ### MDP中的价值函数
 **价值函数（V函数）**：
@@ -135,7 +135,7 @@ $$
 ### 备份图
 备份图定义了未来下一时刻的状态价值函数与上一时刻的状态价值函数之间的关联。
 
-![img.png](../image/Q_function.png)
+![img.png](../weak1_image/Q_function.png)
 
 ### 策略评估
 已知策略，计算价值函数 $V_π(s)$ 的过程就是策略评估
@@ -175,7 +175,7 @@ https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_dp.html
 ### 策略迭代
 分为两个步骤：策略评估和策略改进
 
-![img.png](../image/cldd.png)
+![img.png](../weak1_image/cldd.png)
 
 策略评估就是给当前的策略函数估计状态价值函数。
 

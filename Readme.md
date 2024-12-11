@@ -16,11 +16,11 @@ eg：
 
 github上的
 
-![img.png](image/egeg1.png)
+![img.png](weak1_image/egeg1.png)
 
 pycharm的Markdown编辑器上的
 
-![img.png](image/egeg11.png)
+![img.png](weak1_image/egeg11.png)
 # 参考
     王琦，杨毅远，江季，Easy RL：强化学习教程，人民邮电出版社，https://github.com/datawhalechina/easy-rl, 2022.
     Qi Wang, Yiyuan Yang, Ji Jiang，Easy RL: Reinforcement Learning Tutorial，Posts & Telecom Press，https://github.com/datawhalechina/easy-rl, 2022.
